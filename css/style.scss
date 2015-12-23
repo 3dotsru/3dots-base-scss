@@ -2,12 +2,24 @@
 /************************************************
 *    Import vendor libs
 **************************************************/
-@import "/vendor/bootstrap/bootstrap";
-@import "/vendor/blueimp/blueimp-gallery.min.css";
-@import "/vendor/animate.css/animate.css";
-@import "/vendor/blueimp/blueimp-gallery.min.css";
-@import "/vendor/fa/font-awesome.min.css";
-@import "/vendor/owlcarousel/owl.carousel.css";
+@import "../vendor/bootstrap/bootstrap-flex";
+@import "../vendor/tether/css/tether.min.css";
+@import "../vendor/blueimp/blueimp-gallery.min.css";
+@import "../vendor/animate.css/animate.css";
+@import "../vendor/blueimp/blueimp-gallery.min.css";
+@import "../vendor/fa/font-awesome.min.css";
+@import "../vendor/owlcarousel/owl.carousel.css";
+
+/************************************************
+*    Стили сайта
+**************************************************/
+
+$footer-height: 60px;
+
+
+body{
+    margin-bottom: $footer-height;
+}
 
 
 
@@ -32,20 +44,15 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+footer{
+    height: $footer-height;
+    line-height: $footer-height;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    @extend .bg-faded;
+}
 
 
 /************************************************
