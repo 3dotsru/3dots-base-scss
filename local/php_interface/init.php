@@ -15,3 +15,43 @@
 //require $_SERVER['DOCUMENT_ROOT']."/inc/StorageHelper.php";
 //require $_SERVER['DOCUMENT_ROOT']."/inc/eventHandlers.php";
 //require $_SERVER['DOCUMENT_ROOT']."/inc/LangManager.php";
+
+//Кастомная отправка почты
+//function custom_mail($to, $subject, $message, $additionalHeaders = ''){
+//
+//    require_once $_SERVER['DOCUMENT_ROOT'].'/inc/vendor/autoload.php';
+//
+//    if(!Nette\Utils\Validators::isEmail($to))
+//        return true;
+//
+//    try {
+//        $mail = new Nette\Mail\Message;
+//        $mail->setFrom(COption::GetOptionString("main", "site_name").' <abyss@3dots.ru>')
+//            ->addTo($to)
+//            ->setSubject($subject)
+//            ->setBody($message);
+//        if($additionalHeaders){
+//            $mail->clearHeader('Content-Type');
+//            $arAdditionalHeaders = explode("\n", $additionalHeaders);
+//            foreach($arAdditionalHeaders as $sAdditionalHeader){
+//                $arHeader = explode(": ", $sAdditionalHeader);
+//                if($arHeader[0] == "From") continue;
+//                if($arHeader[0] == "X-EVENT_NAME") continue;
+//                if($arHeader[1] == '') continue;
+//                $mail->setHeader($arHeader[0], $arHeader[1]);
+//            }
+//            //$mail->addAttachment()
+//        }
+//        $mailer = new Nette\Mail\SmtpMailer(array(
+//            'host' => 'smtp.gmail.com',
+//            'username' => 'abyss@3dots.ru',
+//            'password' => 'qopqopqop',
+//            'secure' => 'ssl'
+//        ));
+//        $mailer->send($mail);
+//        return true;
+//    }catch (Exception $e){
+//        AddMessage2Log($e->getMessage(), 'mailer_error');
+//    }
+//
+//}
